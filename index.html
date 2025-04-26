@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Айбийский язык</title>
+    <style>
+        :root {
+            --bg: #faf6f0;
+            --card: #fff9f0;
+            --text: #5a4a3a;
+            --primary: #c8b6a6;
+            --accent: #a4907c;
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+        }
+        
+        header {
+            background-color: var(--primary);
+            padding: 3rem 0;
+            text-align: center;
+            color: white;
+        }
+        
+        nav {
+            background-color: var(--accent);
+            padding: 1.5rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            list-style: none;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            background-color: var(--card);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        h2 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-weight: normal;
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+        
+        .command-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .command-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: normal;
+        }
+        
+        .command-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--primary);
+        }
+        
+        .command-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Айбийский язык</h1>
+            <p>Язык с минимальным количеством слов для максимальной выразительности</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">О языке</a></li>
+            <li><a href="#commands">Словарь</a></li>
+            <li><a href="#examples">Примеры</a></li>
+            <li><a href="#rules">Правила</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="about">
+            <h2>О Айбийском языке</h2>
+            <p>Айбийский язык был создан ещё очень давно, но только сейчас был переделан. В этом языке минимальное количество слов для легкости, но сам он сложен в разговоре.</p>
+            
+            <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                <img src="Aybiya.jpg" alt="Флаг Айбии" style="max-height: 200px;">
+                <img src="Mabb.jpg" alt="Портрет Мабба" style="max-height: 200px;">
+            </div>
+            
+            <p>Глава Айбии и студии Манл является Мабб. Так же Мабб сделал этот сайт.</p>
+        </section>
+        
+        <section id="commands">
+            <h2>Словарь Айбийского языка</h2>
+            
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Слово</th>
+                        <th>Перевод</th>
+                        <th>Пример использования</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ама</td>
+                        <td>Я</td>
+                        <td>Ама деш - Я делаю</td>
+                    </tr>
+                    <tr>
+                        <td>Гот</td>
+                        <td>Верх</td>
+                        <td>Пыш гот - Предмет вверху</td>
+                    </tr>
+                    <tr>
+                        <td>Гуд</td>
+                        <td>Хороший</td>
+                        <td>Су гуд - Хороший человек</td>
+                    </tr>                    
+                    <tr>
+                        <td>Дес</td>
+                        <td>Да</td>
+                        <td>Дес, ама су - Да, я человек</td>
+                    </tr>                    
+                    <tr>
+                        <td>Дып</td>
+                        <td>Воздух</td>
+                        <td>Дып гуд - Хороший воздух</td>
+                    </tr>                    
+                    <tr>
+                        <td>Зеп</td>
+                        <td>Земля</td>
+                        <td>Зепёпри - Дерево</td>
+                    </tr>                    
+                    <tr>
+                        <td>Иви</td>
+                        <td>Сегодня</td>
+                        <td>Иви гуд - Сегодня хорошо</td>
+                    </tr>                    
+                    <tr>
+                        <td>Кос</td>
+                        <td>Говорить</td>
+                        <td>Ама кос - Я говорю</td>
+                    </tr>
+                    <tr>
+                        <td>Кош</td>
+                        <td>Здесь</td>
+                        <td>Су кош - Человек здесь</td>
+                    </tr>
+                    <tr>
+                        <td>Лук</td>
+                        <td>Взгляд</td>
+                        <td>Лук гуд - Хорошее зрение</td>
+                    </tr>
+                    <tr>
+                        <td>Мов</td>
+                        <td>Действие</td>
+                        <td>Лукёмов - Смотреть (букв. "взгляд-действие")</td>
+                    </tr>
+                    <tr>
+                        <td>Нот</td>
+                        <td>Нет</td>
+                        <td>Нот, ама нот су - Нет, я не человек</td>
+                    </tr>
+                    <tr>
+                        <td>Пок</td>
+                        <td>Вода</td>
+                        <td>Покёнотёгуд - Алкоголь (букв. "плохая-вода")</td>
+                    </tr>
+                    <tr>
+                        <td>При</td>
+                        <td>Растение</td>
+                        <td>При-при - Растения</td>
+                    </tr>
+                    <tr>
+                        <td>Пыш</td>
+                        <td>Предмет</td>
+                        <td>Пыш су - Человеческий предмет</td>
+                    </tr>                    
+                    <tr>
+                        <td>Су</td>
+                        <td>Человек</td>
+                        <td>Су-су - Люди</td>
+                    </tr>                    
+                    <tr>
+                        <td>Фуд</td>
+                        <td>Еда</td>
+                        <td>Фудёпри - Салат (букв. "еда-из-растения")</td>
+                    </tr>                    
+                    <tr>
+                        <td>Шол</td>
+                        <td>Огонь</td>
+                        <td>Кошёшол - Костер (букв. "место-огня")</td>
+                    </tr>
+                    <tr>
+                        <td>Шуп</td>
+                        <td>Вчера</td>
+                        <td>Шуп нотёгуд - Вчера было плохо</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="examples">
+            <h2>Примеры предложений</h2>
+            
+            <div class="example-card">
+                <h1>Простое предложение</h1>
+                <p><strong>Айбийский:</strong> Ама гуд су.</p>
+                <p><strong>Русский:</strong> Я хороший человек.</p>
+            </div>
+            
+            <div class="example-card">
+                <h1>Отрицание</h1>
+                <p><strong>Айбийский:</strong> Ама нот деш пыш.</p>
+                <p><strong>Русский:</strong> Я не делаю предмет.</p>
+            </div>
+            
+            <div class="example-card">
+                <h1>Составное слово</h1>
+                <p><strong>Айбийский:</strong> Нотёгудёпок кош.</p>
+                <p><strong>Русский:</strong> Здесь алкоголь (букв. "не-хорошая-вода").</p>
+            </div>
+            
+            <div class="example-card">
+                <h1>Вопрос</h1>
+                <p><strong>Айбийский:</strong> Ама гуд суда?</p>
+                <p><strong>Русский:</strong> Я хороший человек?</p>
+            </div>
+            
+            <div class="example-card">
+                <h1>Множественное число</h1>
+                <p><strong>Айбийский:</strong> Су-су деш фудёпри.</p>
+                <p><strong>Русский:</strong> Люди делают салат (букв. еда-из-растения).</p>
+            </div>
+        </section>
+        
+        <section id="rules">
+            <h2>Правила Айбийского языка</h2>
+            
+            <h3 style="margin-top: 1.5rem;">1. Составные слова</h3>
+            <p>Для создания новых понятий используйте разделитель <strong>"ё"</strong>:</p>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                <li><strong>Нотёгудёпок</strong> → "алкоголь" (букв. "не-хорошая-вода")</li>
+                <li><strong>Кошёсу</strong> → "дом" (букв. "человеческое-место")</li>
+            </ul>
+            
+            <h3 style="margin-top: 1.5rem;">2. Вопросы</h3>
+            <p>Для образования вопроса добавьте частицу <strong>"да"</strong> в конец предложения:</p>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                <li><strong>Ама гуд су.</strong> → "Я хороший человек."</li>
+                <li><strong>Ама гуд суда?</strong> → "Я хороший человек?"</li>
+            </ul>
+            
+            <h3 style="margin-top: 1.5rem;">3. Множественное число</h3>
+            <p>Образуется путем удвоения корня через дефис:</p>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                <li><strong>Су</strong> → "человек"</li>
+                <li><strong>Су-су</strong> → "люди"</li>
+                <li><strong>При-при</strong> → "растения"</li>
+            </ul>
+            
+            <h3 style="margin-top: 1.5rem;">4. Порядок слов</h3>
+            <p>Базовый порядок: <strong>Подлежащее + Сказуемое + Дополнение</strong></p>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                <li><strong>Ама деш пыш.</strong> → "Я делаю предмет."</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Создано Маббом для студии Манл</p>
+        </div>
+    </footer>
+</body>
+</html>
