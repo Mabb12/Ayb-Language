@@ -35,6 +35,7 @@
         }
         
         nav {
+            position: fixed;
             top: 80px;
             left: 0;
             right: 0;
@@ -150,7 +151,7 @@
         }
         
         img {
-            max-width: 50%;
+            max-width: 100%;
             border-radius: 8px;
             margin: 1rem 0;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -167,10 +168,8 @@
 <body>
     <header>
         <div class="container">
-            <section id="menu">
-                <h1>Айбийский язык</h1>
-                <p>Язык с минимальным количеством слов для максимальной выразительности</p>
-            </section>
+            <h1>Айбийский язык</h1>
+            <p>Язык с минимальным количеством слов для максимальной выразительности</p>
         </div>
     </header>
 
@@ -189,8 +188,8 @@
             <p>Айбийский язык был создан ещё очень давно, но только сейчас был переделан. В этом языке минимальное количество слов для легкости, но сам он сложен в разговоре.</p>
             
             <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-                <img src="Aybiya.jpg" alt="Флаг Айбии">
-                <img src="Mabb.jpg" alt="Портрет Мабба">
+                <img src="https://via.placeholder.com/300x200?text=Флаг+Айбии" alt="Флаг Айбии">
+                <img src="https://via.placeholder.com/200x200?text=Портрет+Мабба" alt="Портрет Мабба">
             </div>
             
             <p>Глава Айбии и студии Манл является Мабб. Так же Мабб сделал этот сайт.</p>
@@ -386,23 +385,38 @@
     
     <footer>
         <div class="container">
-            <p>Создано Маббом для клана Айбия. Так же в Айбийском языке помогали мои друзья, под псевдонимами: Николай и Руди.</p>
+            <p>Создано Маббом для клана Айбия. Также в Айбийском языке помогали мои друзья, под псевдонимами: Николай и Руди.</p>
         </div>
     </footer>
+
     <script>
         function openCategory(categoryId) {
+            // Скрыть все категории
             document.querySelectorAll('.category-content').forEach(content => {
                 content.style.display = 'none';
             });
             
+            // Убрать активность у всех кнопок
             document.querySelectorAll('.tab-button').forEach(button => {
                 button.classList.remove('active');
             });
             
+            // Показать выбранную категорию
             document.getElementById(categoryId).style.display = 'block';
             
+            // Активировать кнопку
             event.currentTarget.classList.add('active');
         }
+
+        // Плавная прокрутка для навигации
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
