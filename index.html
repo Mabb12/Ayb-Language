@@ -18,45 +18,70 @@
             color: var(--text);
             font-family: 'Georgia', serif;
             line-height: 1.8;
+            padding-top: 150px;
+            margin: 0;
         }
         
+        /* Фиксированный хедер */
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
             background-color: var(--primary);
-            padding: 3rem 0;
+            padding: 1rem 0;
             text-align: center;
             color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
+        /* Фиксированная навигация */
         nav {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            z-index: 999;
             background-color: var(--accent);
-            padding: 1.5rem 0;
+            padding: 0.8rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         nav ul {
             display: flex;
             justify-content: center;
-            gap: 3rem;
+            gap: 1.5rem;
             list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
         }
         
         nav a {
             color: white;
             text-decoration: none;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
+            font-size: 1rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
         }
         
         .container {
             max-width: 800px;
-            margin: 3rem auto;
+            margin: 2rem auto;
             padding: 0 2rem;
         }
         
         section {
             background-color: var(--card);
             border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
         
@@ -72,19 +97,18 @@
         .command-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 2rem 0;
+            margin: 1rem 0;
         }
         
         .command-table th {
             background-color: var(--primary);
             color: white;
-            padding: 1rem;
+            padding: 0.8rem;
             text-align: left;
-            font-weight: normal;
         }
         
         .command-table td {
-            padding: 1rem;
+            padding: 0.8rem;
             border-bottom: 1px solid var(--primary);
         }
         
@@ -92,35 +116,61 @@
             border-bottom: none;
         }
         
-        img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        .example-card {
+            margin-bottom: 2rem;
         }
+        
+        /* Стили для табов словаря */
         .category-tabs {
             display: flex;
             gap: 8px;
             margin-bottom: 20px;
             flex-wrap: wrap;
-        }
-        .tab-button {
             background: var(--primary);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .tab-button {
+            background: var(--accent);
             color: white;
             border: none;
             padding: 8px 16px;
             border-radius: 6px;
             cursor: pointer;
+            transition: opacity 0.3s;
         }
+        
+        .tab-button:hover {
+            opacity: 0.9;
+        }
+        
         .tab-button.active {
-            background: var(--accent);
+            background: white;
+            color: var(--accent);
         }
+        
         .category-content {
             display: none;
+        }
+        
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text);
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
+    <!-- Фиксированный хедер -->
     <header>
         <div class="container">
             <h1>Айбийский язык</h1>
@@ -128,6 +178,7 @@
         </div>
     </header>
 
+    <!-- Фиксированная навигация -->
     <nav>
         <ul>
             <li><a href="#about">О языке</a></li>
@@ -143,8 +194,8 @@
             <p>Айбийский язык был создан ещё очень давно, но только сейчас был переделан. В этом языке минимальное количество слов для легкости, но сам он сложен в разговоре.</p>
             
             <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-                <img src="Aybiya.jpg" alt="Флаг Айбии" style="max-height: 200px;">
-                <img src="Mabb.jpg" alt="Портрет Мабба" style="max-height: 200px;">
+                <img src="https://via.placeholder.com/300x200?text=Флаг+Айбии" alt="Флаг Айбии">
+                <img src="https://via.placeholder.com/200x200?text=Портрет+Мабба" alt="Портрет Мабба">
             </div>
             
             <p>Глава Айбии и студии Манл является Мабб. Так же Мабб сделал этот сайт.</p>
@@ -153,7 +204,6 @@
         <section id="commands">
             <h2>Словарь Айбийского языка</h2>
             
-            <!-- Категории с табами -->
             <div class="category-tabs">
                 <button class="tab-button active" onclick="openCategory('nouns')">Существительные</button>
                 <button class="tab-button" onclick="openCategory('verbs')">Глаголы</button>
@@ -162,71 +212,125 @@
                 <button class="tab-button" onclick="openCategory('particles')">Частицы</button>
                 <button class="tab-button" onclick="openCategory('other')">Остальное</button>
             </div>
-        
+
             <!-- Существительные -->
             <div id="nouns" class="category-content" style="display: block;">
                 <table class="command-table">
-                    <tr><td>Су</td><td>Человек</td><td>Су-су - Люди</td></tr>
-                    <tr><td>Пыш</td><td>Предмет</td><td>Пыш су - Человеческий предмет</td></tr>
-                    <tr><td>Зеп</td><td>Земля</td><td>Зепёпри - Дерево</td></tr>
-                    <tr><td>Пок</td><td>Вода</td><td>Покёнотёгуд - Алкоголь</td></tr>
-                    <tr><td>Дып</td><td>Воздух</td><td>Дып гуд - Хороший воздух</td></tr>
-                    <tr><td>Шол</td><td>Огонь</td><td>Кошёшол - Костер</td></tr>
-                    <tr><td>При</td><td>Растение</td><td>При-при - Растения</td></tr>
-                    <tr><td>Фуд</td><td>Еда</td><td>Фудёпри - Салат</td></tr>
-                    <tr><td>Там</td><td>Время</td><td>Там гуд - Хорошее время</td></tr>
-                    <tr><td>Алл</td><td>Железо</td><td>Аллёпрям - Меч</td></tr>
-                    <tr><td>Дол</td><td>Часть</td><td>Готёдолёсу - Голова</td></tr>
-                    <tr><td>Фиг</td><td>Фигура</td><td>Укёфиг - Треугольник</td></tr>
+                    <thead>
+                        <tr>
+                            <th>Слово</th>
+                            <th>Перевод</th>
+                            <th>Пример</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Су</td><td>Человек</td><td>Су-су - Люди</td></tr>
+                        <tr><td>Пыш</td><td>Предмет</td><td>Пыш су - Человеческий предмет</td></tr>
+                        <tr><td>Зеп</td><td>Земля</td><td>Зепёпри - Дерево</td></tr>
+                        <tr><td>Пок</td><td>Вода</td><td>Покёнотёгуд - Алкоголь</td></tr>
+                        <tr><td>Дып</td><td>Воздух</td><td>Дып гуд - Хороший воздух</td></tr>
+                        <tr><td>Шол</td><td>Огонь</td><td>Кошёшол - Костер</td></tr>
+                        <tr><td>При</td><td>Растение</td><td>При-при - Растения</td></tr>
+                        <tr><td>Фуд</td><td>Еда</td><td>Фудёпри - Салат</td></tr>
+                        <tr><td>Там</td><td>Время</td><td>Там гуд - Хорошее время</td></tr>
+                        <tr><td>Алл</td><td>Железо</td><td>Аллёпрям - Меч</td></tr>
+                        <tr><td>Дол</td><td>Часть</td><td>Готёдолёсу - Голова</td></tr>
+                        <tr><td>Фиг</td><td>Фигура</td><td>Укёфиг - Треугольник</td></tr>
+                    </tbody>
                 </table>
             </div>
-        
+
             <!-- Глаголы -->
             <div id="verbs" class="category-content" style="display: none;">
                 <table class="command-table">
-                    <tr><td>Мов</td><td>Действие</td><td>Нотёгудёмов - Бить</td></tr>
-                    <tr><td>Бар</td><td>Быть</td><td>Ама бар Мегатрон - Я есть Мегатрон</td></tr>
-                    <tr><td>Нэв</td><td>Иметь</td><td>Ама нэв фуд - Я имею еду</td></tr>
-                    <tr><td>Кэн</td><td>Мочь</td><td>Ама кэн мов - Я могу делать</td></tr>
+                    <thead>
+                        <tr>
+                            <th>Слово</th>
+                            <th>Перевод</th>
+                            <th>Пример</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Мов</td><td>Действие</td><td>Нотёгудёмов - Бить</td></tr>
+                        <tr><td>Бар</td><td>Быть</td><td>Ама бар Мегатрон - Я есть Мегатрон</td></tr>
+                        <tr><td>Нэв</td><td>Иметь</td><td>Ама нэв фуд - Я имею еду</td></tr>
+                        <tr><td>Кэн</td><td>Мочь</td><td>Ама кэн мов - Я могу делать</td></tr>
+                    </tbody>
                 </table>
             </div>
-        
+
             <!-- Прилагательные -->
             <div id="adjectives" class="category-content" style="display: none;">
                 <table class="command-table">
-                    <tr><td>Гуд</td><td>Хороший</td><td>Су гуд - Хороший человек</td></tr>
-                    <tr><td>Прям</td><td>Прямой</td><td>Прям су - Ровный пацан</td></tr>
-                    <tr><td>Сул</td><td>Большой</td><td>Сул пыш - Большой предмет</td></tr>
-                    <tr><td>Лот</td><td>Много</td><td>Лот там - Много времени</td></tr>
-                    <tr><td>Душ</td><td>Добрый</td><td>Душ су - Добрый человек</td></tr>
+                    <thead>
+                        <tr>
+                            <th>Слово</th>
+                            <th>Перевод</th>
+                            <th>Пример</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Гуд</td><td>Хороший</td><td>Су гуд - Хороший человек</td></tr>
+                        <tr><td>Прям</td><td>Прямой</td><td>Прям су - Ровный пацан</td></tr>
+                        <tr><td>Сул</td><td>Большой</td><td>Сул пыш - Большой предмет</td></tr>
+                        <tr><td>Лот</td><td>Много</td><td>Лот там - Много времени</td></tr>
+                        <tr><td>Душ</td><td>Добрый</td><td>Душ су - Добрый человек</td></tr>
+                    </tbody>
                 </table>
             </div>
-        
+
             <!-- Местоимения -->
             <div id="pronouns" class="category-content" style="display: none;">
                 <table class="command-table">
-                    <tr><td>Ама</td><td>Я</td><td>Ама мов - Я делаю</td></tr>
+                    <thead>
+                        <tr>
+                            <th>Слово</th>
+                            <th>Перевод</th>
+                            <th>Пример</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ама</td><td>Я</td><td>Ама мов - Я делаю</td></tr>
+                    </tbody>
                 </table>
             </div>
-        
+
             <!-- Частицы -->
             <div id="particles" class="category-content" style="display: none;">
                 <table class="command-table">
-                    <tr><td>Нот</td><td>Нет</td><td>Нот, ама нот су - Нет, я не человек</td></tr>
-                    <tr><td>Нор</td><td>Но</td><td>Нор су бар! - Но есть люди!</td></tr>
-                    <tr><td>Ш</td><td>Или</td><td>Тру ш мов? - Правда или действие?</td></tr>
-                    <tr><td>Вхи</td><td>Почему</td><td>Вхи? - Зачем?</td></tr>
+                    <thead>
+                        <tr>
+                            <th>Слово</th>
+                            <th>Перевод</th>
+                            <th>Пример</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Нот</td><td>Нет</td><td>Нот, ама нот су - Нет, я не человек</td></tr>
+                        <tr><td>Нор</td><td>Но</td><td>Нор су бар! - Но есть люди!</td></tr>
+                        <tr><td>Ш</td><td>Или</td><td>Тру ш мов? - Правда или действие?</td></tr>
+                        <tr><td>Вхи</td><td>Почему</td><td>Вхи? - Зачем?</td></tr>
+                    </tbody>
                 </table>
             </div>
-        
+
             <!-- Остальное -->
             <div id="other" class="category-content" style="display: none;">
                 <table class="command-table">
-                    <tr><td>Гот</td><td>Верх</td><td>Пыш гот - Предмет вверху</td></tr>
-                    <tr><td>Лев</td><td>Лево</td><td>Левёготёдолёсу - Ухо</td></tr>
-                    <tr><td>Ун/уш/ук/эк/ыт/аф</td><td>Числа (1/2/3/5/10/20/50)</td><td>Афун - 49</td></tr>
-                    <tr><td>Иви</td><td>Сегодня</td><td>Иви гуд - Сегодня хорошо</td></tr>
-                    <tr><td>Кош</td><td>Здесь</td><td>Су кош - Человек здесь</td></tr>
+                    <thead>
+                        <tr>
+                            <th>Слово</th>
+                            <th>Перевод</th>
+                            <th>Пример</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Гот</td><td>Верх</td><td>Пыш гот - Предмет вверху</td></tr>
+                        <tr><td>Лев</td><td>Лево</td><td>Левёготёдолёсу - Ухо</td></tr>
+                        <tr><td>Ун/уш/ук/эк/ыт/аф</td><td>Числа (1/2/3/5/10/20/50)</td><td>Афун - 49</td></tr>
+                        <tr><td>Иви</td><td>Сегодня</td><td>Иви гуд - Сегодня хорошо</td></tr>
+                        <tr><td>Кош</td><td>Здесь</td><td>Су кош - Человек здесь</td></tr>
+                    </tbody>
                 </table>
             </div>
         </section>
@@ -235,24 +339,25 @@
             <h2>Примеры предложений</h2>
             
             <div class="example-card">
-                <h1>Простое предложение</h1>
+                <h3>Простое предложение</h3>
                 <p><strong>Айбийский:</strong> Ама гуд су.</p>
                 <p><strong>Русский:</strong> Я хороший человек.</p>
             </div>
             
             <div class="example-card">
-                <h1>Отрицание</h1>
+                <h3>Отрицание</h3>
                 <p><strong>Айбийский:</strong> Ама нот деш пыш.</p>
                 <p><strong>Русский:</strong> Я не делаю предмет.</p>
             </div>
             
             <div class="example-card">
-                <h1>Составное слово</h1>
+                <h3>Составное слово</h3>
                 <p><strong>Айбийский:</strong> Нотёгудёпок кош.</p>
                 <p><strong>Русский:</strong> Здесь алкоголь (букв. "не-хорошая-вода").</p>
             </div>
+            
             <div class="example-card">
-                <h1>Множественное число</h1>
+                <h3>Множественное число</h3>
                 <p><strong>Айбийский:</strong> Су-су мов фудёпри.</p>
                 <p><strong>Русский:</strong> Люди делают салат (букв. еда-из-растения).</p>
             </div>
@@ -261,29 +366,30 @@
         <section id="rules">
             <h2>Правила Айбийского языка</h2>
             
-            <h3 style="margin-top: 1.5rem;">1. Составные слова</h3>
+            <h3>1. Составные слова</h3>
             <p>Для создания новых понятий используйте разделитель <strong>"ё"</strong>:</p>
-            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+            <ul>
                 <li><strong>Нотёгудёпок</strong> → "алкоголь" (букв. "не-хорошая-вода")</li>
                 <li><strong>Кошёсу</strong> → "дом" (букв. "человеческое-место")</li>
             </ul>
             
-            <h3 style="margin-top: 1.5rem;">2. Множественное число</h3>
+            <h3>2. Множественное число</h3>
             <p>Образуется путем удвоения корня через дефис:</p>
-            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+            <ul>
                 <li><strong>Су</strong> → "человек"</li>
                 <li><strong>Су-су</strong> → "люди"</li>
                 <li><strong>При-при</strong> → "растения"</li>
             </ul>
             
-            <h3 style="margin-top: 1.5rem;">3. Порядок слов</h3>
+            <h3>3. Порядок слов</h3>
             <p>Базовый порядок: <strong>Подлежащее + Сказуемое + Дополнение</strong></p>
-            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+            <ul>
                 <li><strong>Ама мов пыш.</strong> → "Я делаю предмет."</li>
             </ul>
-            <h3 style="margin-top: 1.5rem;">4. Составление чисел</h3>
-            <p>Чтобы образовать число, нужно поставить сначало цифру и после числа, что надо от неё отнять</p>
-            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+            
+            <h3>4. Составление чисел</h3>
+            <p>Чтобы образовать число, нужно поставить сначала цифру и после числа, что надо от неё отнять:</p>
+            <ul>
                 <li><strong>Афыт.</strong> → "Тридцать"</li>
             </ul>
         </section>
