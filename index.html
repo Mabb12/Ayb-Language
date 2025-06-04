@@ -156,13 +156,22 @@
             overflow-x: auto;
         }
         
-        .image-container {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 1rem 0;
+        .image-container img {
+            max-width: 100%;
+            height: auto; 
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+        
+        .image-container {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 1rem 0;
+    }
         
         img {
             max-width: 100%;
@@ -173,9 +182,9 @@
         footer {
             text-align: center;
             padding: 1.5rem 0;
-            color: var(--text);
+            color: white;
             font-size: 0.8rem;
-            background-color: var(--primary);
+            background-color: var(--accent);
             margin-top: 2rem;
         }
         
