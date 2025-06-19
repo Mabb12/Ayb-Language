@@ -1,3 +1,5 @@
+// С js файлом помогал deepseek
+
 function openCategory(categoryId) {
     // Скрыть все категории
     document.querySelectorAll('.category-content').forEach(content => {
