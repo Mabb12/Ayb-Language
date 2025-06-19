@@ -1,0 +1,236 @@
+:root {
+    --bg: #faf6f0;
+    --card: #fff9f0;
+    --text: #5a4a3a;
+    --primary: #c8b6a6;
+    --accent: #a4907c;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primary);
+    padding: 1.5rem 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    position: sticky;
+    top: 1px;
+    z-index: 999;
+    background-color: var(--accent);
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    list-style: none;
+    margin: 0;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.container {
+    max-width: 800px;
+    margin: 180px auto 2rem;
+    padding: 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+section {
+    background-color: var(--card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+    font-weight: normal;
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--primary);
+    padding-bottom: 0.5rem;
+}
+
+.command-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    word-break: break-word;
+}
+
+.command-table th {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.6rem;
+    text-align: left;
+}
+
+.command-table td {
+    padding: 0.6rem;
+    border-bottom: 1px solid var(--primary);
+}
+
+.command-table tr:last-child td {
+    border-bottom: none;
+}
+
+.example-card {
+    margin-bottom: 1.5rem;
+}
+
+.category-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    background: var(--primary);
+    padding: 8px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.tab-button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.tab-button:hover {
+    opacity: 0.9;
+}
+
+.tab-button.active {
+    background: white;
+    color: var(--accent);
+}
+
+.category-content {
+    display: none;
+    overflow-x: auto;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto; 
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.image-container {
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
+justify-content: center;
+margin: 1rem 0;
+}
+
+img {
+max-width: 100%;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+footer {
+text-align: center;
+padding: 1.5rem 0;
+color: white;
+font-size: 0.8rem;
+background-color: var(--accent);
+margin-top: 2rem;
+}
+
+/* Медиазапросы для адаптивности */
+@media (min-width: 768px) {
+    body {
+        padding-top: 0;
+    }
+    header {
+        position: relative;
+        width: 100%;
+        z-index: 1000;
+    }
+                
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        background-color: var(--accent);
+        padding: 0.5rem 0;
+    }
+    
+    nav ul {
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 1rem;
+    }
+    
+    nav a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .container {
+        margin: 2rem auto;
+        padding: 0 2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .command-table {
+        font-size: 1rem;
+    }
+    
+    .tab-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+    
+    img {
+        max-width: 300px;
+    }
+}
