@@ -181,6 +181,88 @@ background-color: var(--accent);
 margin-top: 2rem;
 }
 
+.practice-section {
+    background-color: #f0f8ff;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.interactive-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+.word-builder {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.word-part {
+    padding: 8px 12px;
+    background: #e3f2fd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.word-part:hover {
+    background: #bbdefb;
+}
+
+.translation-area {
+    min-height: 60px;
+    border: 2px dashed #90caf9;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    background: #f5f5f5;
+}
+
+/* Система прогресса */
+.progress-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.progress-bar {
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #4caf50;
+    width: 30%; /* Начальное значение */
+    transition: width 0.5s;
+}
+
+/* Викторина */
+.quiz-option {
+    padding: 10px 15px;
+    margin: 5px 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quiz-option:hover {
+    background: #f5f5f5;
+}
+
 /* Медиазапросы для адаптивности */
 @media (min-width: 768px) {
     body {
@@ -232,5 +314,9 @@ margin-top: 2rem;
     
     img {
         max-width: 300px;
+    }
+        
+    .word-builder {
+        justify-content: center;
     }
 }
