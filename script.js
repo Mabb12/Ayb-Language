@@ -28,67 +28,115 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Конструктор слов
-function addToBuilder(part) {
-    const output = document.getElementById('word-output');
-    if (output.textContent.includes("Перетащите")) {
-        output.textContent = part;
-    } else {
-        output.textContent += ' ' + part;
+    // Конструктор слов
+    function addToBuilder(element) {
+        const word = element.textContent;
+        const output = document.getElementById('word-output-1');
+        
+        if (output.textContent === "Перетащите сюда части слова") {
+            output.textContent = word;
+        } else {
+            output.textContent += word;
+        }
     }
-}
-
-function checkTranslation() {
-    const userInput = document.getElementById('word-output').textContent;
-    const feedback = document.getElementById('builder-feedback');
     
-    // Простая проверка (можно расширить)
-    if (userInput.includes('нотёгудёпок')) {
-        feedback.textContent = 'Правильно! Это "алкоголь" (не-хорошая-вода)';
-        feedback.style.color = 'green';
-    } else {
-        feedback.textContent = 'Попробуйте еще раз. Подсказка: начните с "нотёгуд"';
-        feedback.style.color = 'red';
+    function checkWord(outputId, correctAnswer) {
+        const userAnswer = document.getElementById(outputId).textContent;
+        const feedback = document.getElementById('feedback-1');
+        
+        if (userAnswer === correctAnswer) {
+            feedback.textContent = "Правильно! " + correctAnswer + " - " + getTranslation(correctAnswer);
+            feedback.className = "feedback correct";
+        } else {
+            feedback.textContent = "Неправильно. Попробуйте еще раз. Подсказка: " + getHint(correctAnswer);
+            feedback.className = "feedback incorrect";
+        }
     }
-}
-
-// Викторина
-function checkQuiz(element, isCorrect) {
-    const options = element.parentElement.querySelectorAll('.quiz-option');
     
-    options.forEach(opt => {
-        opt.style.backgroundColor = '';
-        opt.style.borderColor = '';
-    });
-    
-    if (isCorrect) {
-        element.style.backgroundColor = '#d4edda';
-        element.style.borderColor = '#c3e6cb';
-    } else {
-        element.style.backgroundColor = '#f8d7da';
-        element.style.borderColor = '#f5c6cb';
-        // Показываем правильный ответ
-        options.forEach(opt => {
-            if (opt.getAttribute('data-correct') === 'true') {
-                opt.style.backgroundColor = '#d4edda';
-                opt.style.borderColor = '#c3e6cb';
-            }
-        });
+    // Викторина
+    function checkQuiz(element, isCorrect) {
+        const feedback = document.getElementById('feedback-2');
+        
+        if (isCorrect) {
+            feedback.textContent = "Верно! гуд су - хороший человек";
+            feedback.className = "feedback correct";
+            element.style.backgroundColor = "rgba(138, 155, 104, 0.2)";
+            element.style.borderColor = "var(--correct)";
+        } else {
+            feedback.textContent = "Неверно. Правильный ответ: гуд су";
+            feedback.className = "feedback incorrect";
+            element.style.backgroundColor = "rgba(180, 107, 107, 0.2)";
+            element.style.borderColor = "var(--incorrect)";
+        }
     }
-}
-
-// Система вкладок (если еще нет)
-function openCategory(categoryName) {
-    const contents = document.querySelectorAll('.category-content');
-    contents.forEach(content => {
-        content.style.display = 'none';
-    });
     
-    const tabs = document.querySelectorAll('.tab-button');
-    tabs.forEach(tab => {
-        tab.classList.remove('active');
-    });
+    // Флеш-карты
+    function flipCard(card) {
+        card.classList.toggle('flipped');
+    }
     
-    document.getElementById(categoryName).style.display = 'block';
-    event.currentTarget.classList.add('active');
-}
+    function nextCard() {
+        // Реализация смены карточек
+        alert("Следующая карточка будет реализована в полной версии");
+    }
+    
+    // Сопоставление
+    let draggedItem = null;
+    
+    function dragStart(e) {
+        draggedItem = e.target;
+        e.dataTransfer.setData('text/plain', e.target.textContent);
+    }
+    
+    function dragOver(e) {
+        e.preventDefault();
+    }
+    
+    function drop(e) {
+        e.preventDefault();
+        if (draggedItem) {
+            e.target.textContent = draggedItem.textContent;
+        }
+    }
+    
+    function checkMatching() {
+        // Проверка правильности сопоставления
+        alert("Проверка будет реализована в полной версии");
+    }
+    
+    // Заполнение пропусков
+    function fillBlank(blankId, element) {
+        document.getElementById(blankId).textContent = element.textContent;
+    }
+    
+    function checkBlank(blankId, correctAnswer) {
+        const userAnswer = document.getElementById(blankId).textContent;
+        const feedback = document.getElementById('feedback-6');
+        
+        if (userAnswer === correctAnswer) {
+            feedback.textContent = "Правильно!";
+            feedback.className = "feedback correct";
+        } else {
+            feedback.textContent = "Неправильно. Попробуйте еще раз.";
+            feedback.className = "feedback incorrect";
+        }
+    }
+    
+    // Вспомогательные функции
+    function getTranslation(word) {
+        const translations = {
+            "дугёпок": "плохая вода",
+            "гуд су": "хороший человек",
+            "фудёмов": "ем еду"
+        };
+        return translations[word] || "перевод не найден";
+    }
+    
+    function getHint(word) {
+        const hints = {
+            "дугёпок": "начните с 'дуг'",
+            "гуд су": "используйте пробел между словами",
+            "фудёмов": "окончание 'ёмов' означает действие"
+        };
+        return hints[word] || "попробуйте еще раз";
+    }
