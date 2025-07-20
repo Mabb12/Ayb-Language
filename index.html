@@ -368,6 +368,54 @@
                 <li><strong>Ама нев пок ко</strong> → "Я имею воду"</li>
             </ul>
         </section>
+
+        <section id="practice" class="practice-section">
+        <div class="container">
+            <h2>Практика Айбийского</h2>
+            
+            <div class="interactive-card">
+                <h3>Конструктор слов</h3>
+                <p>Соберите составное слово по правилам Айбийского языка:</p>
+                
+                <div class="word-builder">
+                    <div class="word-part" onclick="addToBuilder('нот')">нот</div>
+                    <div class="word-part" onclick="addToBuilder('гуд')">гуд</div>
+                    <div class="word-part" onclick="addToBuilder('пок')">пок</div>
+                    <div class="word-part" onclick="addToBuilder('ё')">ё</div>
+                    <div class="word-part" onclick="addToBuilder('су')">су</div>
+                    <div class="word-part" onclick="addToBuilder('пиш')">пиш</div>
+                </div>
+                
+                <div class="translation-area" id="word-output">
+                    Перетащите сюда части слова
+                </div>
+                
+                <button class="btn" onclick="checkTranslation()">Проверить</button>
+                <div id="builder-feedback"></div>
+            </div>
+            
+            <div class="interactive-card">
+                <h3>Мини-викторина</h3>
+                <div class="quiz-question">
+                    <p>Как будет "хороший человек" на Айбийском?</p>
+                    <div class="quiz-option" onclick="checkQuiz(this, true)">гуд су</div>
+                    <div class="quiz-option" onclick="checkQuiz(this, false)">су гудё</div>
+                    <div class="quiz-option" onclick="checkQuiz(this, false)">гудёсу</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="progress-container">
+        <div class="container">
+            <h2>Ваш прогресс</h2>
+            <p>Изучено 12 из 100 слов</p>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 12%"></div>
+            </div>
+            <button class="btn">Продолжить обучение</button>
+        </div>
+    </section>
     </div>
     
     <footer>
