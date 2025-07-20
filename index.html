@@ -368,113 +368,113 @@
                 <li><strong>Ама нев пок ко</strong> → "Я имею воду"</li>
             </ul>
         </section>
-
-<section id="practice" class="practice-section">
-    <div class="container">
-        <h2>Практические задания</h2>
         
-        <!-- Задание 1: Конструктор слов -->
-        <div class="exercise-card">
-            <h3>Составьте правильное слово</h3>
-            <p>Соберите слово "дугёпок" (плохая вода):</p>
-            <div class="word-parts-container">
-                <div class="word-part" onclick="addToBuilder(this)">дуг</div>
-                <div class="word-part" onclick="addToBuilder(this)">ё</div>
-                <div class="word-part" onclick="addToBuilder(this)">пок</div>
-                <div class="word-part" onclick="addToBuilder(this)">гуд</div>
-                <div class="word-part" onclick="addToBuilder(this)">нот</div>
-            </div>
-            <div class="translation-area" id="word-output-1"></div>
-            <button class="btn" onclick="checkWord('word-output-1', 'дугёпок')">Проверить</button>
-            <div class="feedback" id="feedback-1"></div>
-        </div>
-        
-        <!-- Задание 2: Викторина -->
-        <div class="exercise-card">
-            <h3>Выберите правильный перевод</h3>
-            <p>Как будет "хороший человек" на Айбийском?</p>
-            <div class="quiz-options">
-                <div class="quiz-option" onclick="checkQuiz(this, false)">гудёсу</div>
-                <div class="quiz-option" onclick="checkQuiz(this, true)">гуд су</div>
-                <div class="quiz-option" onclick="checkQuiz(this, false)">суёгуд</div>
-            </div>
-            <div class="feedback" id="feedback-2"></div>
-        </div>
-        
-        <!-- Задание 3: Ввод перевода -->
-        <div class="exercise-card">
-            <h3>Переведите на Айбийский</h3>
-            <p>Введите перевод фразы "холодная вода":</p>
-            <div class="input-exercise">
-                <input type="text" id="translation-input" placeholder="Айбийский перевод...">
-            </div>
-            <button class="btn" onclick="checkTranslation()">Проверить</button>
-            <div class="feedback" id="feedback-3"></div>
-        </div>
-        
-        <!-- Задание 4: Флеш-карты -->
-        <div class="exercise-card">
-            <h3>Изучаем слова</h3>
-            <div class="flashcard" onclick="flipCard(this)">
-                <div class="flashcard-inner">
-                    <div class="flashcard-front">
-                        <div class="flashcard-word">гуд су</div>
-                        <div class="flashcard-example">Переведите на русский</div>
+        <section id="practice" class="practice-section">
+            <div class="container">
+                <h2>Практические задания</h2>
+                
+                <!-- Задание 1: Конструктор слов -->
+                <div class="exercise-card">
+                    <h3>Составьте правильное слово</h3>
+                    <p>Соберите слово алкоголь:</p>
+                    <div class="word-parts-container">
+                        <div class="word-part" onclick="addToBuilder(this)">дуг</div>
+                        <div class="word-part" onclick="addToBuilder(this)">ё</div>
+                        <div class="word-part" onclick="addToBuilder(this)">пок</div>
+                        <div class="word-part" onclick="addToBuilder(this)">гуд</div>
+                        <div class="word-part" onclick="addToBuilder(this)">нот</div>
                     </div>
-                    <div class="flashcard-back">
-                        <div class="flashcard-word">хороший человек</div>
-                        <div class="flashcard-example">Айбийский: гуд су</div>
+                    <div class="translation-area" id="word-output-1"></div>
+                    <button class="btn" onclick="checkWord('word-output-1', 'дугёпок')">Проверить</button>
+                    <div class="feedback" id="feedback-1"></div>
+                </div>
+                
+                <!-- Задание 2: Викторина -->
+                <div class="exercise-card">
+                    <h3>Выберите правильный перевод</h3>
+                    <p>Как будет "хороший человек" на Айбийском?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkQuiz(this, false)">гудёсу</div>
+                        <div class="quiz-option" onclick="checkQuiz(this, true)">гуд су</div>
+                        <div class="quiz-option" onclick="checkQuiz(this, false)">суёгуд</div>
+                    </div>
+                    <div class="feedback" id="feedback-2"></div>
+                </div>
+                
+                <!-- Задание 3: Ввод перевода -->
+                <div class="exercise-card">
+                    <h3>Переведите на Айбийский</h3>
+                    <p>Введите перевод фразы "холодная вода":</p>
+                    <div class="input-exercise">
+                        <input type="text" id="translation-input" placeholder="Айбийский перевод...">
+                    </div>
+                    <button class="btn" onclick="checkTranslation()">Проверить</button>
+                    <div class="feedback" id="feedback-3"></div>
+                </div>
+                
+                <!-- Задание 4: Флеш-карты -->
+                <div class="exercise-card">
+                    <h3>Изучаем слова</h3>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div class="flashcard-word">гуд су</div>
+                                <div class="flashcard-example">Переведите на русский</div>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="flashcard-word">хороший человек</div>
+                                <div class="flashcard-example">Айбийский: гуд су</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flashcard-nav">
+                        <button class="btn" onclick="nextCard()">Следующая карточка</button>
                     </div>
                 </div>
-            </div>
-            <div class="flashcard-nav">
-                <button class="btn" onclick="nextCard()">Следующая карточка</button>
-            </div>
-        </div>
-        
-        <!-- Задание 5: Сопоставление -->
-        <div class="exercise-card">
-            <h3>Сопоставьте слова</h3>
-            <div class="matching-exercise">
-                <div class="match-pair">
-                    <div class="match-item" draggable="true" ondragstart="dragStart(event)">гуд</div>
-                    <div class="match-item" ondragover="dragOver(event)" ondrop="drop(event)">хороший</div>
+                
+                <!-- Задание 5: Сопоставление -->
+                <div class="exercise-card">
+                    <h3>Сопоставьте слова</h3>
+                    <div class="matching-exercise">
+                        <div class="match-pair">
+                            <div class="match-item" draggable="true" ondragstart="dragStart(event)">гуд</div>
+                            <div class="match-item" ondragover="dragOver(event)" ondrop="drop(event)">хороший</div>
+                        </div>
+                        <div class="match-pair">
+                            <div class="match-item" draggable="true" ondragstart="dragStart(event)">дуг</div>
+                            <div class="match-item" ondragover="dragOver(event)" ondrop="drop(event)">плохой</div>
+                        </div>
+                        <div class="match-pair">
+                            <div class="match-item" draggable="true" ondragstart="dragStart(event)">пок</div>
+                            <div class="match-item" ondragover="dragOver(event)" ondrop="drop(event)">вода</div>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkMatching()">Проверить</button>
+                    <div class="feedback" id="feedback-5"></div>
                 </div>
-                <div class="match-pair">
-                    <div class="match-item" draggable="true" ondragstart="dragStart(event)">дуг</div>
-                    <div class="match-item" ondragover="dragOver(event)" ondrop="drop(event)">плохой</div>
+                
+                <!-- Задание 6: Заполнение пропусков -->
+                <div class="exercise-card">
+                    <h3>Заполните пропуски</h3>
+                    <div class="fill-blank">
+                        <p class="fill-blank-sentence">Ама <span class="blank" id="blank1"></span> фуд (Я ем еду)</p>
+                        <div class="word-parts-container">
+                            <div class="word-part" onclick="fillBlank('blank1', this)">фудёмов</div>
+                            <div class="word-part" onclick="fillBlank('blank1', this)">мовёмов</div>
+                            <div class="word-part" onclick="fillBlank('blank1', this)">говёмов</div>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkBlank('blank1', 'фудёмов')">Проверить</button>
+                    <div class="feedback" id="feedback-6"></div>
                 </div>
-                <div class="match-pair">
-                    <div class="match-item" draggable="true" ondragstart="dragStart(event)">пок</div>
-                    <div class="match-item" ondragover="dragOver(event)" ondrop="drop(event)">вода</div>
-                </div>
-            </div>
-            <button class="btn" onclick="checkMatching()">Проверить</button>
-            <div class="feedback" id="feedback-5"></div>
-        </div>
-        
-        <!-- Задание 6: Заполнение пропусков -->
-        <div class="exercise-card">
-            <h3>Заполните пропуски</h3>
-            <div class="fill-blank">
-                <p class="fill-blank-sentence">Ама <span class="blank" id="blank1"></span> фуд (Я ем еду)</p>
-                <div class="word-parts-container">
-                    <div class="word-part" onclick="fillBlank('blank1', this)">фудёмов</div>
-                    <div class="word-part" onclick="fillBlank('blank1', this)">мовёмов</div>
-                    <div class="word-part" onclick="fillBlank('blank1', this)">говёмов</div>
-                </div>
-            </div>
-            <button class="btn" onclick="checkBlank('blank1', 'фудёмов')">Проверить</button>
-            <div class="feedback" id="feedback-6"></div>
-        </div>
-        
-        <!-- Прогресс -->
-        <div class="progress-container">
-            <h3>Ваш прогресс</h3>
-            <p>Выполнено 2 из 6 заданий</p>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 33%"></div>
-            </div>
+                
+                <!-- Прогресс -->
+                <div class="progress-container">
+                    <h3>Ваш прогресс</h3>
+                    <p>Выполнено 2 из 6 заданий</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 33%"></div>
+                    </div>
         </div>
     </section>
     </div>
